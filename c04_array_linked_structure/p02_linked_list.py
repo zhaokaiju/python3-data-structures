@@ -190,6 +190,13 @@ class LinkedList(object):
             remove_node.next = None
             self._size -= 1
 
+    def __iter__(self):
+        # 当前节点
+        cur = self._dummy_head.next
+        while cur is not None:
+            yield cur.data
+            cur = cur.next
+
     def __str__(self):
         node_list = list()
 
